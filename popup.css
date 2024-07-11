@@ -1,0 +1,721 @@
+:root {
+    --black-bg0: #313552;
+    --black-bg1: #0f172a;
+    --black-bg2: #1c242c;
+    --black-bg23: #242424;
+    --black-bg3: #252945;
+    --border-color: #E3E5EA;
+    --border-color1: #777;
+    --special-color1: #7C5DFA;
+    --special-color2: #7C5DFA;
+    --font-color1: #d6dee6;
+    --font-color2: #fff;
+    --tran: all 0.2s ease;
+    --tran1: all 0.05s ease;
+}
+
+/* 
+#252945
+#1A1C2C
+#313552
+#202339
+#7C5DFA
+ */
+
+body{
+    background: var(--black-bg1);
+    color: var(--font-color1);
+    width: 350px;
+    height: 410px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.p-5{
+    padding: 5px;
+}
+.dflex{
+    display: flex;
+}
+
+.hidden{
+    display:none;
+}
+
+.title{
+    text-align: center;
+}
+
+.title h2{
+    margin: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    user-select: none;
+    color: #efefef;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.social{
+    position: absolute;
+    top: 0;
+    padding: 10px;
+}
+.social a{
+    text-decoration: none;
+}
+.social i{
+    font-size: 10px;
+    margin: 0 2px;
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 0 1px rgb(254, 254, 254);
+    background-color: var(--black-bg0);
+    color: var(--font-color2);
+
+}
+.social i:hover{
+    box-shadow: 0 0 2px rgb(254, 254, 254);
+}
+
+
+
+.options{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.options .fa-solid{
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 5px 10px;
+    color: var(--font-color1);
+}
+.options .fa-solid:hover:not(.okActive){
+    color: var(--font-color2);
+    transform: scale(1.1);
+}
+.options .fa-solid:active{
+    color: var(--special-color2);
+    transform: scale(0.95);
+}
+.options .okActive{
+    color: var(--special-color1);
+}
+
+
+/* Main container */
+.mainCON{
+    width: 330px;
+    height: 300px;
+    margin: 9px;
+    /* border: 1px solid var(--border-color); */
+    background-color: transparent;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.mainCON .row{
+    width: 960px;
+    padding: 0;
+}
+
+
+/* Home Section */
+/* 
+.mainCON .row .home{
+    width: 330px;
+    height: 300px;
+    background-color: var(--black-bg3);
+    overflow-x: hidden;
+    padding: 9px;
+}
+
+
+.mainCON .row .home .block{
+    width: 300px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--black-bg0);
+    font-size: 14px;
+} */
+
+
+/* Home Section */
+.mainCON .row .home {
+  width: calc(330px - 18px); /* Adjusted width to accommodate the delete button */
+  height: 300px;
+  background-color: var(--black-bg3);
+  overflow-y: auto; /* Changed overflow-x to overflow-y */
+  padding: 9px;
+}
+
+.mainCON .row .home .block {
+  width: 300px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid var(--border-color);
+  background-color: var(--black-bg0);
+  font-size: 14px;
+}
+
+
+
+
+
+.mainCON .row .home .block .incon{
+    padding: 8px;
+    border-bottom: 1px solid var(--border-color);
+    user-select: none;
+}
+.mainCON .row .home .block .incon select{
+    outline: none;
+    border-radius: 5px;
+    /* width: ; */
+    padding: 3px;
+    cursor: pointer;
+}
+.mainCON .row .home .block .incon .colcer{
+width: 0px;
+height: 0px;
+position: relative;
+outline: none;
+bottom: -10px;
+left: -15px; 
+z-index: -20; 
+}
+.mainCON .row .home .block .selectedColor{
+padding: 10px;
+font-size: 14px;
+display: flex;
+align-items: center;
+}
+.mainCON .row .home .block .selectedColor .colorGrid{
+width: 30px;
+height: 30px;
+border: 1px solid black;
+background-color: #202339;
+border-radius: 5px;
+margin-right: 10px;
+}
+.mainCON .row .home .block .selectedColor .colorValue{
+cursor:copy;
+width: 70px;
+font-size: 15px;
+transition: var(--tran);
+}
+.mainCON .row .home .block .selectedColor .colorValue:hover{
+color: var(--special-color2);
+}
+.mainCON .row .home .block .selectedColor .save {
+position: relative;
+left: 110px;
+cursor: pointer;
+user-select: none;
+background-color: var(--special-color1);
+border: 1px solid transparent;
+font-size: 15px;
+font-weight: 500;
+color: var(--font-color2);
+border-radius: 5px;
+padding: 5px 10px;
+transition: var(--tran);
+}
+.mainCON .row .home .block .selectedColor .save:hover{
+background-color: #000000;
+border: 1px solid var(--special-color1);
+}
+.mainCON .row .home .block .selectedColor .save:active{
+transform: scale(0.95);
+}
+
+/* .mainCON .row .home .save-color{
+width: 290px;
+user-select: none;
+margin: 18px 9px;
+padding: 0 0 10px 0;
+border-radius: 5px;
+background-color: var(--black-bg0);
+border: 1px solid var(--border-color);
+text-align: center;
+} */
+
+.mainCON .row .home .save-color {
+  width: calc(290px - 18px); /* Adjusted width to accommodate the delete button */
+  user-select: none;
+  margin: 18px 9px;
+  padding: 0 0 10px 0;
+  border-radius: 5px;
+  background-color: var(--black-bg0);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+
+
+.mainCON .row .home .save-color h4{
+font-size: 15px;
+margin: 10px;
+font-weight: 500;
+}
+.mainCON .row .home .save-color .con .row{
+display: flexbox;
+width: auto;
+} 
+.mainCON .row .home .save-color .con .row .colorgrid{
+margin: 5px;
+display: inline-block;
+background-color: #202339;
+width: 35px;
+height: 35px;
+border-radius: 5px;
+border: 1px solid black;
+cursor: pointer;
+transition: var(--tran);
+}
+.mainCON .row .home .save-color .con .row .doHover{
+border-color: transparent;
+}
+.mainCON .row .home .save-color .con .row .doHover:hover{
+transform: scale(1.25);
+border-color: #ddd;
+}
+.mainCON .row .home .save-color .con .row .doHover:active{
+transform: scale(1.15);
+}
+/* Style for delete all button */
+.mainCON .row .home .save-color .delete-all {
+  background-color: var(--special-color1);
+  border: 1px solid transparent;
+  color: var(--font-color2);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: var(--tran);
+  margin-top: 10px;
+}
+
+.mainCON .row .home .save-color .delete-all:hover {
+  background-color: #000000;
+  border: 1px solid var(--special-color1);
+}
+
+.mainCON .row .home .save-color .delete-all:active {
+  transform: scale(0.95);
+}
+
+
+
+  /* playground section  */
+
+.mainCON .row .playground{
+    width: 330px;
+    height: 290px;
+    padding: 9px;
+    background-color: var(--black-bg3);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    color: var(--font-color1);
+    font-size: 12px;
+  }
+  .mainCON .row .playground .row{
+    width: 309px;
+    padding: 5px 0;
+    background-color: var(--black-bg0);
+    border-top: 1px solid var(--border-color1);
+  }
+  .mainCON .row .playground .dropdown input[type = "checkbox"]{
+    width: 100%;
+    height: 25px;
+    background-color: #456796;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    outline: none;
+    user-select: none;
+    z-index: 100;
+    opacity: 0;
+    margin: 0;
+  }
+  .mainCON .row .playground .dropdown-box{
+    display: none;
+  }
+  .mainCON .row .playground .dropdown{
+    width: 309px;
+    margin-bottom: 10px;
+    background-color: var(--black-bg0);
+    border: 1px solid var(--border-color);
+    margin-top: 5px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: var(--tran);
+  }
+  .mainCON .row .playground .dropdown:hover{
+    border: 1px solid var(--border-color1);
+  }
+  .mainCON .row .playground .dropdown .title{
+    text-align: left;
+    padding: 6px 10px;
+    margin: 0;
+    user-select: none;
+  }
+  .mainCON .row .playground .dropdown .title i{
+    font-size: 12px;
+    padding: 0 2px;
+  }
+  
+  .mainCON .row .playground .dropdown input[ type= "checkbox"]:checked ~ .dropdown-box{
+    display: block;
+  }
+  .mainCON .row .playground .dropdown input[ type= "checkbox"]:checked ~ .title i{
+    transform: rotate(180deg);
+  }
+  .mainCON .row .playground .row h4{
+    padding: 5px;
+    margin: 0 10px;
+    user-select: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .mainCON .row .playground .row .col1{
+    display: flex;
+    padding: 5px;
+    align-items: center;
+  }
+  .mainCON .row .playground .row .col1 p{
+    padding: 5px; 
+    margin: 0;
+    font-size: 12px;
+    user-select: none;
+    font-weight: 500;
+    width: 45px;
+  }
+  .mainCON .row .playground .row .col1 input[type="color"]{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    overflow: hidden;
+    margin: 0 5px ;
+    cursor: pointer;
+  }
+  .mainCON .row .playground .row .col1 .colorgrid{
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background: #111111;
+    border: 2px solid white;
+    margin: 5px;
+    transition: var(--tran);
+  }
+  .mainCON .row .playground .row .col1 .colorvalue{
+    font-size: 13px;
+    cursor: copy;
+  }
+  .mainCON .row .playground .row .col1 .colorvalue:hover{
+    color: var(--special-color2);
+    transform: scale(1.05);
+  }
+  .mainCON .row .playground .row .col1 .colorvalue:active{
+    transform: scale(1);
+  }
+  .mainCON .row .playground .row .col1 h5{
+    margin: 3px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .mainCON .row .playground .row .col1 input[type="text"], .diffInput{
+    width: 90px;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    background-color: var(--black-bg23);
+    color: #fff;
+    outline: none;
+    letter-spacing: 1px;
+  }
+  .diffInput{
+    width: 160px;
+  }
+  .mainCON .row .playground .row .col1 input[type="text"]::placeholder,.mainCON .row .playground .row .col1 input[type="number"]::placeholder,.diffInput::placeholder{
+    color: #bbb;
+  }
+  .mainCON .row .playground .row .col1 input[type="number"]{
+    width: 30px;
+    padding: 5px;
+    margin: 5px 0;
+    margin-left: 5px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid var(--border-color);
+    background-color: var(--black-bg23);
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
+  
+  .mainCON .row .playground .row .res{
+    margin: 0 5px 10px 10px;
+    text-align: center;
+    font-size: 15px;
+  }
+  .mainCON .row .playground .row .res .fa-solid{
+    margin: 2px 5px;
+  }
+  .mainCON .row .playground #hexRESULT ,.mainCON .row .playground #RGBresult{
+    cursor: copy;
+  }
+  .mainCON .row .playground #hexRESULT:hover ,.mainCON .row .playground #RGBresult:hover{
+    color: var(--special-color2);
+  }
+  .mainCON .row .playground .row label{
+    font-weight: 500;
+    font-size: 13px;
+  }
+  .mainCON .row .playground .row .colorGrader {
+    padding: 20px;
+  }
+  .mainCON .row .playground .row .colorGrader .colorBox{
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    letter-spacing: 1px;
+    transition: var(--tran1);
+  }
+  .mainCON .row .playground .row .colorGrader .colorBox:hover{
+    transform: scale(1.04);
+    border: 1px solid #fff;
+    border-radius: 3px;
+  }
+  .mainCON .row .playground .row .colorGrader .colorBox:active{
+    transform: scale(1.02);
+  }
+  .mainCON .row .playground .row .colorGrader .colorBox .keySpan{
+    position: absolute;
+    left: 15px;
+    letter-spacing: 0;
+    font-weight: 500;
+  }
+  .mainCON .row .playground .row .colorGrader .ColorHigh{
+    transform: scale(1.05);
+    border: 1px solid#fff;
+    border-radius: 3px;
+  }
+  .mainCON .row .playground .row .conColorNamer{
+    padding: 0 10px;
+  }
+  .mainCON .row .playground .row .conColorNamer .valCon{
+    border: 1px solid var(--border-color);
+    background-color: var(--black-bg23);
+    color: var(--font-color1);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+  }
+  .mainCON .row .playground .row .conColorNamer .valCon .status{
+    text-align: center;
+    padding: 5px;
+    padding-top: 0;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--special-color2);
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 3px;
+    user-select: none;
+  }
+  .mainCON .row .playground .row .conColorNamer .valCon .basicCon{
+    display: flex;
+    padding: 3px;
+    margin: 0 10px ;
+  }
+  .mainCON .row .playground .row .conColorNamer .valCon .colorBox{
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+    margin: 0 5px;
+    border-radius: 3px;
+  }
+  .mainCON .row .playground .row .conColorNamer .valCon .generatedColorName{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0 5px;
+    width: 220px;
+    color: var(--font-color0);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .mainCON .row .playground .row .conColorNamer .valCon .generatedhex , .mainCON .row .playground .row .conColorNamer .valCon .generatedrgb{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0 5px;
+    color: var(--font-color0);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .mainCON .row .playground .row .conColorNamer .valCon .generatedhex{ width:80px}
+  .mainCON .row .playground .row .conColorNamer .valCon .generatedrgb{ width:120px}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Extras */
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+border: none;
+}
+.toastCON{
+    display: flex;
+    justify-content: center;
+}
+.toast{
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    padding: 5px 10px;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 13px;
+    background-color: #000000;
+    border: 1px solid var(--special-color1);
+    border-radius: 5px;
+    transform: translateY(+60px);
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+
+
+
+
+/* recent50 */
+.mainCON .row .recent50{
+  width: 330px;
+  height: 300px;
+  padding: 0;
+  background-color:var(--black-bg3) ;
+  overflow: hidden;
+}
+.mainCON .row .recent50 .save-color{
+  width: 330px;
+  user-select: none;
+  margin: 10px 0px;
+  padding: 0 0 10px 0;
+  text-align: center;
+}
+.mainCON .row .recent50 h4{
+  font-size: 14px;
+  user-select: none;
+  text-align: center;
+  margin: 5px;
+  font-weight: 500;
+}
+.mainCON .row .recent50 .save-color .con .row{
+  display: flexbox;
+  width: 330px;
+  margin: 0;
+} 
+.mainCON .row .recent50 .save-color .con .row .colorgrid{
+  margin: 4px;
+  display: inline-block;
+  background-color: #000000;
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  cursor: pointer;
+  transition: var(--tran);
+}
+.mainCON .row .recent50 .save-color .con .row .doHover{
+  border-color: transparent;
+}
+.mainCON .row .recent50 .save-color .con .row .doHover:hover{
+  transform: scale(1.4);
+  border: 1px solid #ececec;
+}
+.mainCON .row .recent50 .save-color .con .row .doHover:active{
+  transform: scale(1.3);
+}
+
+/* Scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Or any color you prefer */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Or any color you prefer */
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Or any color you prefer */
+}
+.color-section {
+  width: 330px;
+  height: 300px;
+  padding: 0;
+  background-color: var(--black-bg3);
+  overflow: auto; /* Adjust overflow to 'auto' to enable scrolling */
+}
+
+.color-section h2 {
+  font-size: 14px; /* Adjust font size as needed */
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.color-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 0 5px; /* Adjust padding as needed */
+}
+
+.color-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 5px;
+  border: 1px solid #fff; /* Adjust border color as needed */
+}
