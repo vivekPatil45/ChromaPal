@@ -29,7 +29,7 @@ To install ChromaPal locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/getlost01/ChromaPal.git
+   git clone https://github.com/vivekPatil45/ChromaPal.git
 
 2. Open Chrome and go to `chrome://extensions`.
 
