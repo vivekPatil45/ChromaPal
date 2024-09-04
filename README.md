@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://chrome.google.com/webstore/detail/vibrant-color-dropper-pic/fcekakhpgmlaihglgajajbceajnhlgfn?hl=en&authuser=0">
-    <img src="https://github.com/vivekPatil45/ChromaPal/blob/main/images/clogo.png" height="96">
+    <img src="https://github.com/vivekPatil45/ChromaPal/blob/main/images/icon48.png" height="96">
     <h3 align="center">ChromaPal</h3>
   </a>
 </p>
